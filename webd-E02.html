@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 레이아웃 E-2</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        line-height: 1.5;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        color: #000;
+    }
+    #wrap {
+        width: 100%;
+    }
+    #main {
+        width: 100%;
+        height: 750px;
+        display: flex;
+    }
+    #header {
+        width: 200px;
+    }
+    #header .logo {
+        width: 100%;
+        height: 100px;
+        background-color: #e3e3e3;
+    }
+    #header .nav {
+        width: 100%;
+        height: 650px;
+        background-color: #d9d9d9;
+    }
+    #contents {
+        width: 400px;
+    }
+    #contents .bbc {
+        width: 100%;
+        height: 300px;
+        background-color: #d1d1d1;
+    }
+    #contents .gallery {
+        width: 100%;
+        height: 300px;
+        background-color: #c7c7c7;
+    }
+    #contents .link {
+        width: 100%;
+        height: 150px;
+        background-color: #c3c3c3;
+    }
+    #slider {
+        width: calc(100% - 600px);
+        height: 100%;
+        background-color: #bcbcbc;
+    }
+    #footer {
+        width: 100%;
+        display: flex;
+    }
+    #footer .footer1 {
+        width: 20%;
+        height: 100px;
+        background-color: #a3a3a3;
+    }
+    #footer .footer2 {
+        width: 60%;
+        height: 100px;
+        background-color: #989898;
+    }
+    #footer .footer3 {
+        width: 20%;
+        height: 100px;
+        background-color: #808080;
+    }
+</style>
+<body>
+    <div id="wrap">
+        <main id="main">
+            <header id="header">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </header>
+            <!-- //header -->
+
+            <section id="contents">
+                <article class="bbc"></article>
+                <article class=gallery></article>
+                <article class=link></article>
+            </section>
+            <!-- //contents -->
+
+            <article id="slider"></article>
+            <!-- //slider -->
+
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3">
+                <select>
+                    <option value="패밀리사이트" selected disabled>패밀리사이트</option>
+                    <option value="구글">구글</option>
+                    <option value="네이버">네이버</option>
+                    <option value="다음">다음</option>
+                </select>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+    
+</body>
+</html>

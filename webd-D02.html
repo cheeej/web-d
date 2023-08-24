@@ -40,19 +40,32 @@
       flex-wrap: wrap;
     }
     #slider {
+      width: 100%;
+     display: flex;
+    }
+    #slider .img {
       width: calc(100% - 230px);
       height: 400px;
       background-color: #d1d1d1;
     }
-    #banner {
+    #slider .banner {
       width: 230px;
       height: 400px;
       background-color: #a7a7a7;
     }
     #contents {
       width: 100%;
+      display: flex;
+    }
+    #contents .content1 {
+      width: 50%;
       height: 250px;
-      background-color: #c1c1c1;
+      background-color: #c7c7c7;
+    }
+    #contents .content2 {
+      width: 50%;
+      height: 250px;
+      background-color: #bcbcbc;
     }
     #footer {
       width: 100%;
@@ -80,11 +93,22 @@
         <h1 class="logo"></h1>
         <nav class="nav"></nav>
       </aside>
+      <!-- //aside -->
+      
       <main id="main">
-        <article id="slider"></article>
-        <article id="banner"></article>
-        <section id="contents"></section>
+        <article id="slider">
+          <div class="img"></div>
+          <div class="banner"></div>
+        </article>
+        <!-- //slider -->
+        <section id="contents">
+          <div class="content1"></div>
+          <div class="content2"></div>
+        </section>
+        <!-- //contents -->
       </main>
+      <!-- //main -->
+
       <footer id="footer">
         <div class="footer1"></div>
         <div class="footer2"></div>
@@ -97,6 +121,8 @@
           </select>
         </div>
       </footer>
+      <!-- //footer -->
     </div>
+    <!-- //wrap -->
   </body>
 </html>
