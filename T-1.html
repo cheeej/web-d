@@ -81,28 +81,29 @@
         height: 100px;
         background-color: #9d9d9d;
     }
-    /* tab-menu */
-    .tab-menu {
+    /* tab-wrap */
+    .tab-wrap {
         padding: 20px;
     }
-    .tab-menu .tab-btn ul {
+    .tab-wrap .tab-btn ul {
         display: flex;
     }
-    .tab-menu .tab-btn li.active a {
+    .tab-wrap .tab-btn li.active a {
         text-decoration: underline;
     }
-    .tab-menu .tab-btn li a {
+    .tab-wrap .tab-btn li a {
         display: block;
         padding: 10px;
-        background-color: #b1b1b1
+        background-color: #b1b1b1;
     }
-    .tab-menu .tab-cont > div {
+    .tab-wrap .tab-cont > div {
        padding: 10px;
-       background-color: #c1c1c1
+       background-color: #c1c1c1;
     }
-    /* .tab-menu .tab-cont > div:nth-child(2){
+    /* .tab-cont div:nth-child(2) {
         display: none;
     } */
+    
 </style>
 <div id="wrap">
     <header id="header">
@@ -117,18 +118,18 @@
 
     <main id="contents">
         <section class="content1">
-            <div class="tab-menu">
+            <div class="tab-wrap">
                 <div class="tab-btn">
                     <ul>
-                        <li class="active"><a href="#">탭메뉴1</a></li>
-                        <li><a href="#">탭메뉴2</a></li>
+                        <li class="active"><a href="#">공지사항</a></li>
+                        <li><a href="#">갤러리</a></li>
                     </ul>
                 </div>
                 <div class="tab-cont">
-                    <div>
+                    <div class="bbs">
                         탭메뉴1<br>탭메뉴1<br>탭메뉴1<br>탭메뉴1<br>
                     </div>
-                    <div>
+                    <div class="gellary">
                         탭메뉴2<br>탭메뉴2<br>탭메뉴2<br>탭메뉴2<br>
                     </div>
                 </div>
@@ -149,23 +150,20 @@
 <!-- //wrap -->
 
 <script>
-    $(function(){
-        let tabBtn = $(".tab-btn > ul > li");   
-        let tabCont = $(".tab-cont > div"); 
-        tabCont.hide().eq(0).show();            //첫번째 컨텐츠만 보이게 설정
+ $(function(){
+    let tabBtn = $(".tab-btn > ul > li");
+    let tabCont = $(".tab-cont > div");
+    tabCont.hide().eq(0).show();
 
-        tabBtn.click(function(){
-            const index = $(this).index();    //클릭한 번호를 저장
-            // alert(index);
+    tabBtn.click(function(){
+        const index = $(this).index();
+        // alert(index);
 
-            $(this).addClass("active").siblings().removeClass("active");
-            tabCont.eq(index).show().siblings().hide();
-        })
+        $(this).addClass("active").siblings().removeClass("active");
+        tabCont.eq(index).show().siblings().hide();
     });
 
-    
-
-
+ });
 </script>
 </body>
 </html>
