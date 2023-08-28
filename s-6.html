@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s-6</title>
+    <script src="./dist/js/jquery-3.5.1.min.js"></script>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        line-height: 1.5;
+        text-decoration: none;
+        box-sizing: border-box;
+        color: #ccc;
+        }
+        #wrap {
+            width: 100%;           
+        }
+        #main {
+            width: 100%;
+            height: calc(100vh - 120px);
+            background-color: #efefef;
+            display: flex;
+        }
+        #header {
+            width: 200px;
+            height: 100%;
+        }
+        #header h1 {
+            width: 100%;
+            height: 10%;
+            background-color: #e3e3e3;
+        }
+        #header nav {
+            width: 100%;
+            height: 90%;
+            background-color: #d9d9d9;
+        }
+        #contents {
+            width: 400px;
+            height: 100%;
+        }
+        #contents .banner {
+            width: 100%;
+            height: 15%;
+            background-color: #d1d1d1;
+        }
+        #contents .notice {
+            width: 100%;
+            height: 35%;
+            background-color: #c7c7c7;
+        }
+        #contents .gallery {
+            width: 100%;
+            height: 35%;
+            background-color: #bcbcbc;
+        }
+        #contents .link {
+            width: 100%;
+            height: 15%;
+            background-color: #b1b1b1;
+        }
+        #slider {
+            width: calc(100% - 600px);
+            height: 100%;
+            background-color: #a3a3a3;
+        }
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+        #footer .footer1 {
+            width: 20%;
+            height: 120px;
+            background-color: #9d9d9d;
+        }
+        #footer .footer2 {
+            width: 80%;
+        }
+        #footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 60px;
+            background-color: #929292;
+        }
+        #footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 60px;
+            background-color: #838383;
+        }
+
+        /* slider */
+        #slider {
+            overflow: hidden;
+            /* height: calc(100% - 120px); */
+        }
+        .sliderWrap {
+            width: 100%;
+            height: 400vh;
+        }
+        .sliderWrap .slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .sliderWrap .slider img {
+            vertical-align: top;
+        }
+        .sliderWrap .slider.s1 {
+            background-image: url(/images/allec-gomes-dmLIDt7xZNA-unsplash.jpg);
+        }
+        .sliderWrap .slider.s2 {
+            background-image: url(/images/annie-spratt-s1N_aVIviqA-unsplash.jpg);
+        }
+        .sliderWrap .slider.s3 {
+            background-image: url(/images/adam-birkett-lkNa1eg2d18-unsplash.jpg);
+        }
+        .sliderWrap .slider span {
+            position: absolute;
+            top: calc(50% - 60px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0,0,0,0.2);
+            color: #fff;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <main id="main">
+            <header id="header">
+                <h1></h1>
+                <nav></nav>
+            </header>
+            <!-- //header -->
+
+            <section id="contents">
+                <div class="banner"></div>
+                <div class="notice"></div>
+                <div class="gallery"></div>
+                <div class="link"></div>
+            </section>
+            <!-- //contents -->
+
+            <article id="slider">
+            <div class="sliderWrap">
+            <div class="slider s1">
+                <span>이미지1</span>
+            </div>
+            <div class="slider s2">
+                <span>이미지2</span>
+            </div>
+            <div class="slider s3">
+                <span>이미지3</span>
+            </div>
+    </div>
+</article>
+<!-- //slider -->
+            <!-- //slider -->
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <script>
+        $(function(){
+            let currentIndex = 0;
+            $(".sliderWrap").append($(".slider").first().clone(true));
+
+            setInterval(function(){
+                currentIndex++;
+                $(".sliderWrap").animate({marginTop: -100 * currentIndex + "vh" },600);
+
+                if(currentIndex == 3){
+                    setTimeout(function(){
+                        $(".sliderWrap").animate({marginTop: 0},0);
+                        currentIndex = 0;
+                    });
+                }
+            },3000);
+        });
+    </script>
+    <!-- //wrap -->
+</body>
+</html>
